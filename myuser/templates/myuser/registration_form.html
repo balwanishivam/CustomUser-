@@ -1,0 +1,26 @@
+{%extends 'myuser/base.html' %}
+{% block title %}Register ur Account{%endblock%}
+<!--block active al bum to be added-->
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="panel-body">
+                <h3>Create new account</h3>
+                {% if error_message %}
+                    <p><strong>{{error_message}}</strong></p>
+                {% endif  %}
+                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% include 'myuser/form-template.html' %}
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
