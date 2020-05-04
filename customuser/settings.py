@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #user apps
+    'myuser',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,7 +69,7 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTH_USER_MODEL ='myuser.Myuser'
 WSGI_APPLICATION = 'customuser.wsgi.application'
 
 
