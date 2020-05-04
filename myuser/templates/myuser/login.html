@@ -1,0 +1,30 @@
+{% extends 'myuser/base.html' %}
+{% block title %}Log In{% endblock %}
+{% block login_active %}active{% endblock %}
+{% block body %}
+<div class="container" >
+    <div class="Absolute-Center is-Responsive">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+            <div class="panel-body">
+                {% if error_message %}
+                    <p><strong>{{error_message}}</strong></p>
+                {% endif  %}
+                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!--Don't make changes here -->
+                    {% include 'myuser/form-template.html' %}
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                Don't have an account? <a href="{% url 'myuser:register' %}">Click here</a> to register.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
